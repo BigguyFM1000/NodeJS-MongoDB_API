@@ -11,7 +11,7 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-const db = require("./models/index")
+const db = require("./Models/index")
 const drUrl = require("./Config/db.config")
 mongoose.connect(drUrl.url, 
   {useNewUrlParser: true}).then(() => {
