@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   res.json({message: "Welcome to Express MongoDB application."})
 })
 
-require("./routes/employee.routes")(app)
+require("./Routes/employee.routes")(app)
 
 // Set port and listen for requests
 const PORT = process.env.PORT || 8080

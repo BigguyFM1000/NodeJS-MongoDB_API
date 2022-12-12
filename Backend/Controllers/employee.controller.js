@@ -1,5 +1,5 @@
-const db = require("../../models")
-const Employee = require("../../models/employee.model")
+const db = require("../Models/employee.models")
+const Employee = require("../Models/employee.models")
 
 // Create and save a new employee
 exports.create = async (req, res) => {
