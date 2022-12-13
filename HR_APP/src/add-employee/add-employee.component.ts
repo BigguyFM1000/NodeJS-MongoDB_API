@@ -11,11 +11,11 @@ import { CrudService } from '../Services/crud.service';
 })
 export class AddEmployeeComponent implements OnInit {
   addForm = new FormGroup({
-    firstname: new FormControl(''),
-    lastname: new FormControl(''),
+    fullname: new FormControl(''),
+    jobtitle: new FormControl(''),
     email: new FormControl(''),
-    address: new FormControl(''),
-    phone: new FormControl(''),
+    phonenumber: new FormControl(''),
+    department: new FormControl(''),
   })
   submitted = false;
 
@@ -28,12 +28,13 @@ export class AddEmployeeComponent implements OnInit {
     this.submitted = true;
 
     let data = {
-      firstname: this.addForm.value.firstname,
-      lastname: this.addForm.value.lastname,
+      fullname: this.addForm.value.fullname,
+      jobtitle: this.addForm.value.jobtitle,
       email: this.addForm.value.email,
-      address: this.addForm.value.address,
-      phone: this.addForm.value.phone
+      phonenumber: this.addForm.value.phonenumber,
+      department: this.addForm.value.department
     };
+
     this.crudService.create(data)
       .subscribe({
         next: (res) => {

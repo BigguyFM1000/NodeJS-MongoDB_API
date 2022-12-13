@@ -22,15 +22,15 @@ export class CrudService {
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(baseUrl+'addEmployee', data);
+    return this.http.post(baseUrl, data);
   }
 
   update(employeeInfo: any,id: any): Observable<any> {
-    return this.http.put(`${baseUrl}updateEmployee/${id}`, employeeInfo);
+    return this.http.put(`${baseUrl}/${id}`, employeeInfo);
   }
 
   delete(id: Employee): Observable<any> {
-    return this.http.delete(`${baseUrl}deleteEmployee/${id.id}`);
+    return this.http.delete(`${baseUrl}/${id.id}`);
   }
 
   // deleteAll(): Observable<any> {

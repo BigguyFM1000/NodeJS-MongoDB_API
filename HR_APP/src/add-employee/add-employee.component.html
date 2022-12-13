@@ -1,36 +1,59 @@
-<div class="container">
-    <div class="top-bar">
-      <h1>New Employee</h1>
-      <button routerLink='/home'><i class="bi bi-arrow-left-circle-fill icon"></i> Back</button>
-    </div>
-    <div class="bottom">
-      
-      <form [formGroup]="addForm">
-        <table>
-          <tr>
-            <td class="col-2"><input type="text" id="fullname" formControlName="fullname"/><span>*</span><br /></td>
-          </tr>
-          <tr>
-            <td class="col-2"><input type="text" id="job_title" formControlName="jobtitle"/><span>*</span><br /></td>
-          </tr>
-          <tr>
-            <td class="col-2"><input type="email" id="email" formControlName="email"/><span>*</span><br /></td>
-          </tr>
-          <tr>
-            <td class="col-2">
-              <textarea id="phonenumber" cols="10" rows="2" formControlName="phonenumber"></textarea><span>*</span><br />
-            </td>
-          </tr>
-          <tr>
-            <td class="col-2"><input type="text" id="department" formControlName="department"/><span>*</span><br /></td>
-          </tr>
-          <tr>
-            <td class="col-2">
-              <button type="submit" class="btn" (click)="AddEmployee()">Submit</button>
-            </td>
-          </tr>
-        </table>
+
+    
+
+    <div class="card flex-shrink-0 w-full max-w-sm mx-auto shadow-2xl bg-base-100 p-4">
+
+      <div class="top-bar text-center">
+        <h1 class="text-3xl">New Employee</h1>
+      </div>
+
+      <div class="card-body">
+        <form [formGroup]="addForm">
+
+        <div class="form-control">
+          <label class="label">
+            <h3 class="label-text">Full Name <span class="text-red-500">*</span></h3>
+          </label>
+          <input id="fullname" type="text" class="input input-bordered" formControlName="fullname"/>
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <h3 class="label-text">Job Title <span class="text-red-500">*</span> </h3>
+          </label>
+          <input id="jobtitle" type="text" class="input input-bordered" formControlName="jobtitle"/>
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <h3 class="label-text">Email <span class="text-red-500">*</span></h3>
+          </label>
+          <input id="email" type="email" class="input input-bordered" formControlName="email"/>
+        </div>
+
+      <div class="form-control">  
+        <label class="label">
+          <h3 class="label-text">Phone Number <span class="text-red-500">*</span></h3>
+        </label>
+        <input id="phonenumber" type="text" class="input input-bordered" formControlName="phonenumber"/>
+      </div>
+
+        <div class="form-control">
+          <label class="label">
+            <h3 class="label-text">Department <span class="text-red-500">*</span></h3>
+          </label>
+          <input id="department" type="text" class="input input-bordered" formControlName="department"/>
+        </div>
+        
+        <div class="form-control flex justify-between flex-row mt-6">
+          <button class="btn btn-active btn-accent w-20" [routerLink]="['/dash']">Back</button>
+          <button class="btn btn-primary w-fit" (click)="AddEmployee()">Add Employee</button>
+        </div>
       </form>
-   
-    </div>
-  </div>
+
+      </div>
+      </div>
+
+
+
+    

@@ -43,7 +43,6 @@
           <td class="text-center">{{ employee.department }}</td>
           <td class="mx-auto flex gap-4 justify-center">
             <button class="btn btn-outline btn-info" [routerLink]="['/view/{{employee.id}}']" routerLinkActive="active">View</button>
-          
             <button class="btn btn-outline btn-success" routerLink="/edit/{{employee.id}}">Edit</button>
             <button class="btn btn-outline btn-secondary" (click)="deleteEmployee(employee)">Delete</button>
           </td>
