@@ -1,0 +1,66 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css');
+
+.container {
+  width: 60%;
+  height: 50vh;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 7rem;
+}
+
+.top-bar {
+  background: #024b1f;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.top-bar h1 {
+  color: #fff;
+  font-size: 23px;
+}
+
+.top-bar button {
+  color: #fff;
+  background: #133a6d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  color: #fff;
+}
+
+.bottom {
+  padding: 2rem 0.5rem;
+}
+
+form {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: start;
+}
+
+form label {
+  text-align: start;
+}
+
+.inputBox{
+  width: 41vw;
+}
+
+.col-2 {
+  width: 30%;
+}
+
+.btn {
+  padding: 0.25rem;
+  font-size: 14px;
+  background: #133a6d;
+  color: #fff;
+  border-radius: 5px;
+}
+
+span {
+  color: red;
+}

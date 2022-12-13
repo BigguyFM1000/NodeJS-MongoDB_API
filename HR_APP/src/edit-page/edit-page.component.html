@@ -1,0 +1,50 @@
+<div class="container overflow-x- scroll">
+    <div class="top-bar">
+      <h1>Update Employee</h1>
+      <button routerLink='/home'><i class="bi bi-arrow-left-circle-fill icon"></i> Back</button>
+    </div>
+    <div class="bottom">
+      <!-- <form > -->
+        <table>
+          <tr>
+            <td>
+              <label for="firstname">First Name: <span>*</span></label>
+            </td>
+            <td class="col-2"><input type="text"  class="inputBox"  [(ngModel)]="userInfo.firstname" /><br /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lastname">Last Name: <span>*</span></label>
+            </td>
+            <td class="col-2"><input type="text" [(ngModel)]="userInfo.lastname" class="inputBox" /><br /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email">Email: <span>*</span></label>
+            </td>
+            <td class="col-2"><input type="email" [(ngModel)]="userInfo.email" class="inputBox" /><br /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="address">Address: <span>*</span></label>
+            </td>
+            <td class="col-2">
+              <textarea id="address" cols="10" [(ngModel)]="userInfo.address" rows="2" class="inputBox"></textarea><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="phone">Phone: <span>*</span></label>
+            </td>
+            <td class="col-2"><input  [(ngModel)]="userInfo.phone"type="text" class="inputBox" /><br /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="col-2">
+              <button type="submit" class="btn" (click)="updateEmployee()">Submit</button>
+            </td>
+          </tr>
+        </table>
+      <!-- </form> -->
+    </div>
+  </div>
