@@ -1,0 +1,56 @@
+<link href="https://cdn.jsdelivr.net/npm/daisyui@2.43.2/dist/full.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+
+<div class="overflow-x-auto w-full">
+    <table class="table w-full">
+      <!-- head -->
+      <thead>
+        <tr class="text-center text-white">
+          <th></th>
+          <th class="text-left">Name</th>
+          <th>Contact Details</th>
+          <th>Department</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let employee of employees, let i = index">
+        <!-- row 1 -->
+        <tr>
+          <th>
+            <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+          </th>
+          <td class="text-start">
+            <div class="flex items-center space-x-3">
+              <div class="avatar">
+                <div class="mask mask-squircle w-12 h-12">
+                  <img src="../assets/dark_magician.jpeg" alt="Avatar Tailwind CSS Component" />
+                </div>
+              </div>
+              <div>
+                <div class="font-bold">{{ employee.fullname }}</div>
+                <div class="text-sm opacity-50">{{ employee.jobtitle }}</div>
+              </div>
+            </div>
+          </td>
+          <td class="text-center">
+            {{ employee.email }}
+            <br/>
+            <span class="badge badge-ghost badge-sm">0{{ employee.phonenumber }}</span>
+          </td>
+          <td class="text-center">{{ employee.department }}</td>
+          <td class="mx-auto flex gap-4 justify-center">
+            <button class="btn btn-outline btn-info" [routerLink]="['/view/{{employee.id}}']" routerLinkActive="active">View</button>
+          
+            <button class="btn btn-outline btn-success" routerLink="/edit/{{employee.id}}">Edit</button>
+            <button class="btn btn-outline btn-secondary" (click)="deleteEmployee(employee)">Delete</button>
+          </td>
+        </tr>
+      
+    </table>
+  </div>
+
+
+  

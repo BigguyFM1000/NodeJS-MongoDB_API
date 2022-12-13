@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-    firstname: {
+    profilepic: {
         type: String,
         default: ''
     },
-    lastname: {
+    fullname: {
+        type: String,
+        default: ''
+    },
+    jobtitle: {
         type: String,
         default: ''
     },
@@ -13,11 +17,11 @@ const schema = new mongoose.Schema({
         type: String,
         
     },
-    address: {
-        type: String
-    },
-    phone: {
+    phonenumber: {
         type: Number
+    },
+    department: {
+        type: String
     }
 });
 const employee = new mongoose.model('Employee', schema);

@@ -6,44 +6,49 @@
     <div class="bottom">
       <!-- <form > -->
         <table>
+
           <tr>
             <td>
-              <label for="firstname">First Name: <span>*</span></label>
+              <label for="firstname">First Name:</label>
             </td>
-            <td class="col-2"><input type="text"  class="inputBox"  [(ngModel)]="userInfo.firstname" /><br /></td>
+            <td class="col-2"><input type="text"  class="inputBox"  [(ngModel)]="userInfo.fullname" /><br /></td>
           </tr>
+
           <tr>
             <td>
-              <label for="lastname">Last Name: <span>*</span></label>
+              <label for="lastname">Last Name:</label>
             </td>
-            <td class="col-2"><input type="text" [(ngModel)]="userInfo.lastname" class="inputBox" /><br /></td>
+            <td class="col-2"><input type="text" [(ngModel)]="userInfo.jobtitle" class="inputBox" /><br /></td>
           </tr>
+
           <tr>
             <td>
-              <label for="email">Email: <span>*</span></label>
+              <label for="email">Email:</label>
             </td>
             <td class="col-2"><input type="email" [(ngModel)]="userInfo.email" class="inputBox" /><br /></td>
           </tr>
+
           <tr>
             <td>
-              <label for="address">Address: <span>*</span></label>
+              <label for="address">Address:</label>
             </td>
             <td class="col-2">
-              <textarea id="address" cols="10" [(ngModel)]="userInfo.address" rows="2" class="inputBox"></textarea><br />
-            </td>
+              <td class="col-2"><input type="text" [(ngModel)]="userInfo.phonenumber" class="inputBox" /><br /></td>
           </tr>
+
           <tr>
             <td>
-              <label for="phone">Phone: <span>*</span></label>
+              <label for="phone">Phone:</label>
             </td>
-            <td class="col-2"><input  [(ngModel)]="userInfo.phone"type="text" class="inputBox" /><br /></td>
+            <td class="col-2"><input  [(ngModel)]="userInfo.department"type="text" class="inputBox" /><br /></td>
           </tr>
+
           <tr>
-            <td></td>
-            <td class="col-2">
+            <td class="col-2 ml-auto">
               <button type="submit" class="btn" (click)="updateEmployee()">Submit</button>
             </td>
           </tr>
+
         </table>
       <!-- </form> -->
     </div>

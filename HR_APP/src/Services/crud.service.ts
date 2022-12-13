@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Employee } from '../employee/employees';
 import { Employees } from '../employee/employees.model';
 
-const baseUrl = 'http://localhost:5050/api/';
+const baseUrl = 'http://localhost:8080/api/employees';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,11 @@ export class CrudService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Employees[]> {
-    return this.http.get<Employees[]>(baseUrl+'getAllEmployees');
+    return this.http.get<Employees[]>(baseUrl);
   }
 
   get(id: any): Observable<Employees> {
-    return this.http.get(`${baseUrl}getEmployee/${id}`);
+    return this.http.get(`${baseUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {

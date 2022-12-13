@@ -1,0 +1,47 @@
+
+
+.container {
+  width: 60%;
+  height: 50vh;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 7rem;
+}
+
+.top-bar {
+  background: #024b1f;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.top-bar h1 {
+  color: #fff;
+  font-size: 23px;
+}
+
+.top-bar button {
+  color: #fff;
+  background: #133a6d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  color: #fff;
+}
+
+.bottom {
+  padding: 2rem 1rem;
+}
+
+table {
+  background: rgb(207, 200, 200);
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.col-2 {
+  margin-left: 2rem;
+}

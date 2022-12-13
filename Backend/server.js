@@ -5,7 +5,7 @@ const bodyParser = require("body-parser")
  
 const app = express()
 const corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:4200"
 }
 app.use(cors(corsOptions))
 app.use(bodyParser.json())

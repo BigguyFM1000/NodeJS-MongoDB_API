@@ -4,18 +4,19 @@ const Employee = require("../Models/employee.models")
 // Create and save a new employee
 exports.create = async (req, res) => {
     // Validate request
-  if (!req.body.firstname && !req.body.lastname && !req.body.email && !req.body.address && !req.body.phone) {
+  if (!req.body.firstname && !req.body.lastname && !req.body.email && !req.body.address && !req.body.phone && !req.body.profilepic) {
     res.status(400).send({ message: "Content cannot be empty!" });
     return;
   }
 
   // Create an Employee
   const employee = new Employee({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    profilepic: req.body.profilepic,
+    fullname: req.body.fullname,
+    jobtitle: req.body.jobtitle,
     email: req.body.email,
-    address: req.body.address,
-    phone: req.body.phone,
+    phonenumber: req.body.phonenumber,
+    department: req.body.department,
   });
 
   // Save Employee in the database

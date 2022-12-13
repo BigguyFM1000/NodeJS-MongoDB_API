@@ -24,7 +24,7 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveEmployee(): void {
+  AddEmployee(): void {
     this.submitted = true;
 
     let data = {
