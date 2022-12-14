@@ -4,11 +4,13 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EditPageComponent } from 'src/edit-page/edit-page.component';
-import { NavbarComponent } from 'src/navbar/navbar.component';
-import { AddEmployeeComponent } from 'src/add-employee/add-employee.component';
-import { DetailsCardComponent } from 'src/details-card/details-card.component'; 
-import { LandingComponent } from 'src/landing/landing.component';
+import { EditPageComponent } from 'src/app/edit-page/edit-page.component';
+import { NavbarComponent } from 'src/app/navbar/navbar.component';
+import { AddEmployeeComponent } from 'src/app/add-employee/add-employee.component';
+import { DetailsCardComponent } from 'src/app/details-card/details-card.component'; 
+import { LandingComponent } from 'src/app/landing/landing.component';
+import { TestingComponent } from './testing/testing.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { LandingComponent } from 'src/landing/landing.component';
     NavbarComponent,
     AddEmployeeComponent,
     DetailsCardComponent,
-    LandingComponent
+    LandingComponent,
+    TestingComponent
   ],
   imports: [
     RouterModule.forRoot([]),
@@ -25,7 +28,10 @@ import { LandingComponent } from 'src/landing/landing.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

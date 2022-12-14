@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Employees } from '../employee/employees.model';
-import { CrudService } from '../Services/crud.service';
+import { Employees } from '../../employee/employees.model';
+import { CrudService } from '../../Services/crud.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -39,7 +39,7 @@ export class AddEmployeeComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/dash']);
         },
         error: (e) => console.error(e)
       });

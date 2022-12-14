@@ -13,25 +13,25 @@
       <div class="card-body">
 
         <h2 class="card-title mx-auto">
-          Fhatuwani Raphalalani
+          <span>{{ userUpdate.fullname }}</span> 
           <div class="badge badge-secondary">NEW</div>
         </h2>
         <div class="text-center">
-          <label class="badge badge-outline">Job Title:</label><h3>Frontend Software Developer</h3>
+          <label class="badge badge-outline">Job Title:</label><h3>{{ userUpdate.jobtitle }}</h3>
         </div>
         <div class="text-center">
-          <label class="badge badge-outline">Email:</label><h3>fm.raphalalani29@gmail.com</h3>
+          <label class="badge badge-outline">Email:</label><h3>{{ userUpdate.email }}</h3>
         </div>
         <div class="text-center">
-          <label class="badge badge-outline">Phone Number:</label><h3>0606909813</h3>
+          <label class="badge badge-outline">Phone Number:</label><h3>0{{ userUpdate.phonenumber }}</h3>
         </div>
         <div class="text-center">
-          <label class="badge badge-outline">Department:</label><h3>Information Technology</h3>
+          <label class="badge badge-outline">Department:</label><h3>{{ userUpdate.department }}</h3>
         </div>
        
       </div>
       
-      <button class="btn btn-outline btn-secondary w-54 " routerLink='/dash'>Back</button>
+      <button class="btn btn-outline btn-secondary w-54 " routerLink='/dash' (click)="clear()">Back</button>
   
     </div>
 

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employees } from '../employee/employees.model';
-import { CrudService } from '../Services/crud.service';
+import { Employees } from '../../employee/employees.model';
+import { CrudService } from '../../Services/crud.service';
 import { Router } from '@angular/router';
-import { Employee } from '../employee/employees';
-import { UpdateModule } from '../employee/update.model';
+import { Employee } from '../../employee/employees';
+import { UpdateModule } from '../../employee/update.model';
 
 @Component({
   selector: 'app-landing',
@@ -72,6 +72,13 @@ export class LandingComponent implements OnInit {
   editEmployee(employeeDetail: UpdateModule){
     // this.employeeDetail = {...employeeDetail}
     this.router.navigate(['/edit']);
+  }
+  edit(item:any)
+  {
+
+ localStorage.setItem('employee_id',item._id)
+  this.router.navigate(['/edit'])
+
   }
 
 }

@@ -44,7 +44,7 @@
           <td class="text-center">{{ employee.department }}</td>
           <td class="mx-auto flex gap-4 justify-center">
             <button class="btn btn-outline btn-info" (click)="viewCard(employee._id)">View</button>
-            <button class="btn btn-outline btn-success" [routerLink]="[{ outlets:{ edit: ['edit/{{employee._id}}']} }]">Edit</button>
+            <button class="btn btn-outline btn-success" (click)=edit(employee) >Edit</button>
             <button class="btn btn-outline btn-secondary" (click)="deleteEmployee(employee._id)">Delete</button>
           </td>
         </tr>

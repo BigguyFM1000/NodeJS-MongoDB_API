@@ -26,7 +26,7 @@ export class CrudService {
   }
 
   update(employeeInfo: any,id: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, employeeInfo);
+    return this.http.patch(`${baseUrl}/${id}`, employeeInfo);
   }
 
   delete(id: Employee): Observable<any> {
