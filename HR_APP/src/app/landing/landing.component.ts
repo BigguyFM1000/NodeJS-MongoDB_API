@@ -44,6 +44,10 @@ export class LandingComponent implements OnInit {
   searchResult: any;
   p: number = 1;
   collection: any[] = []; 
+  firstname: any
+  surname:any
+  contentEditable: boolean = false
+  splitArray: String[] = []
 
   constructor(private crudService: CrudService, private router: Router) { }
 
@@ -64,14 +68,24 @@ export class LandingComponent implements OnInit {
     this.crudService.getAll().subscribe({
         next: (data) => {
           this.employees = data;
+
+
            console.log(data);
            console.log(this.employees[0]._id);
            this.selectedID = this.employees[0]._id
+
+          
            console.log(this.employees);
            this.collection = this.employees;
           for(let j = 0; j < this.employees.length; j++){
             this.divColor = this.color(this.employees[j].fullname);
+            
           }
+
+          console.log(this.firstname);
+          console.log(this.surname);
+          
+          
            
 
            if(this.employees.image){
@@ -159,5 +173,18 @@ export class LandingComponent implements OnInit {
     );
   }
 
+  toggleEditable(event: any) {
+    if ( event.target.checked ) {
+        this.contentEditable = true;
+   }
+}
+
+statusUpdate(event:any,index:any){
+  if (event.target.checked) {
+    this.contentEditable = false;
+}else{
+  this.contentEditable = true;
+}
+}
 
 }

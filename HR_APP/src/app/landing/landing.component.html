@@ -25,7 +25,7 @@
         <tr>
           <th>
             <label>
-              <input type="checkbox" class="checkbox" />
+              <p>#</p>
             </label>
           </th>
           <td class="text-start">
@@ -36,7 +36,7 @@
                 </div>
                 <ng-template #elseBlock>
                   <div class=" text-center rounded-full w-12 h-12 flex justify-center align-center" [ngStyle]="{'background-color': circleColor[i]}">{{
-                    employee.fullname[0].toUpperCase() }}</div>
+                    employee.fullname[0].toUpperCase() }} {{ employee.fullname.split(" ")[1][0]}}</div>
                 </ng-template>
       
               </div>
