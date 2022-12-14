@@ -13,6 +13,7 @@ import { TestingComponent } from './testing/testing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchPipe } from './search.pipe';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SearchPipe } from './search.pipe';
     RouterModule.forRoot([]),
     BrowserModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     FormsModule,
     HttpClientModule,
     RouterModule,

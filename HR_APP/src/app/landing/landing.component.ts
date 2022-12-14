@@ -22,6 +22,18 @@ export class LandingComponent implements OnInit {
     department: ''
   };
 
+  // Profile picture
+  public photoUrl = '';
+  public showInitials = true;
+  public bgColor:string = '';
+  public selectedID: any
+  public divColor:string = '';
+  public initials: string = '';
+  public circleColor: string[] = ['#367E18','#790252','#645CAA','#AF0171','#645CAA','#A460ED',
+                                  '#42855B','#FF4A4A','#A62349','#FFB200','#781C68','#D61C4E','#FF87B2'];
+  
+
+
   // employeeDetail: UpdateModule =  new UpdateModule
   employees: any;
   // tutorials?: Tutorial[];
@@ -30,6 +42,8 @@ export class LandingComponent implements OnInit {
   id = '';
   searchText: any;
   searchResult: any;
+  p: number = 1;
+  collection: any[] = []; 
 
   constructor(private crudService: CrudService, private router: Router) { }
 
@@ -52,13 +66,68 @@ export class LandingComponent implements OnInit {
           this.employees = data;
            console.log(data);
            console.log(this.employees[0]._id);
+           this.selectedID = this.employees[0]._id
            console.log(this.employees);
+           this.collection = this.employees;
+          for(let j = 0; j < this.employees.length; j++){
+            this.divColor = this.color(this.employees[j].fullname);
+          }
            
+
+           if(this.employees.image){
+             this.showInitials = false
+            //  this.photoUrl = this.employees[index].image
+           }else{
+            this.showInitials = true
+          }
+    
+
            
         },
         error: (e) => console.error(e)
       });
   }
+
+  color(fname:string ){
+    console.log(fname)
+    fname = fname[0].toUpperCase();
+    
+
+
+      if(fname.match(/[A-C]/i)){
+        this.circleColor[0]
+        this.bgColor = this.circleColor[0]
+      }else if(fname.match(/[D-F]/i)){
+       
+        this.bgColor = this.circleColor[1]
+      }else if(fname.match(/[G-I]/i)){
+        this.circleColor[2]
+        this.bgColor = this.circleColor[2]
+      }else if(fname.match(/[J-L]/i)){
+        this.circleColor[3]
+        this.bgColor = this.circleColor[3]
+      }else if(fname.match(/[M-O]/i)){
+        this.circleColor[4]
+        this.bgColor = this.circleColor[4]
+      }else if(fname.match(/[P-R]/i)){
+        this.circleColor[5]
+        this.bgColor = this.circleColor[5]
+      }else if(fname.match(/[S-U]/i)){
+        this.circleColor[6]
+        this.bgColor = this.circleColor[6]
+      }else if(fname.match(/[V-X]/i)){
+        this.circleColor[7]
+        this.bgColor = this.circleColor[7]
+      }else if(fname.match(/[YZ]/i)){
+        this.circleColor[8]
+        this.bgColor = this.circleColor[8]
+      }else{
+        this.circleColor[-1]
+        this.bgColor = this.circleColor[-1]
+      }
+      return this.bgColor
+  }
+
 
   deleteEmployee(emplyId: Employee): void {
 

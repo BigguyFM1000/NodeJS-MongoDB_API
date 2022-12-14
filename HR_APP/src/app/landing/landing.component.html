@@ -20,7 +20,7 @@
         </tr>
       </thead>
 
-      <tbody *ngFor="let employee of employees | Search:searchText; let i = index">
+      <tbody *ngFor="let employee of employees | Search:searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
         <!-- row 1 -->
         <tr>
           <th>
@@ -32,8 +32,13 @@
             <div class="flex items-center space-x-3">
               <div class="avatar">
                 <div class="mask mask-squircle w-12 h-12">
-                  <img src="../assets/dark_magician.jpeg" alt="Avatar Tailwind CSS Component" />
+                  <img src="../assets/dark_magician.jpeg" *ngIf="employee.profilePic; else elseBlock" alt="Avatar Tailwind CSS Component" />
                 </div>
+                <ng-template #elseBlock>
+                  <div class=" text-center rounded-full w-12 h-12 flex justify-center align-center" [ngStyle]="{'background-color': circleColor[i]}">{{
+                    employee.fullname[0].toUpperCase() }}</div>
+                </ng-template>
+      
               </div>
               <div>
                 <div class="font-bold">{{ employee.fullname }}</div>
@@ -56,6 +61,7 @@
         </tr>
       
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 
 
