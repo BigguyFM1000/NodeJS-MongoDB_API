@@ -32,7 +32,8 @@ export class AddEmployeeComponent implements OnInit {
       jobtitle: this.addForm.value.jobtitle,
       email: this.addForm.value.email,
       phonenumber: this.addForm.value.phonenumber,
-      department: this.addForm.value.department
+      department: this.addForm.value.department,
+      profilepic: this.addForm.value.profilepic
     };
 
     this.crudService.create(data)
