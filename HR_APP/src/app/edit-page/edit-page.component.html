@@ -9,14 +9,21 @@
 
           <tr>
             <td>
-              <label for="firstname">First Name:</label>
+              <label for="firstname">Full Name:</label>
             </td>
             <td class="col-2"><input type="text" name="fullname" class="inputBox"  [(ngModel)]="userUpdate.fullname" id="fullname"/><br /></td>
           </tr>
 
           <tr>
             <td>
-              <label for="lastname">Last Name:</label>
+              <label for="firstname">Profile Picture URL:</label>
+            </td>
+            <td class="col-2"><input type="text" name="profilepic" class="inputBox"  [(ngModel)]="userUpdate.profilepic" id="profilepic"/><br /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="lastname">Job Title:</label>
             </td>
             <td class="col-2"><input type="text" name="jobtitle" [(ngModel)]="userUpdate.jobtitle" class="inputBox" id="jobtitle"/><br /></td>
           </tr>
@@ -31,7 +38,7 @@
 
           <tr>
             <td>
-              <label for="address">Address:</label>
+              <label for="address">Phone Number:</label>
             </td>
             <td class="col-2">
               <td class="col-2"><input type="text" name="phonenumber" [(ngModel)]="userUpdate.phonenumber" class="inputBox" id="phonenumber"/><br /></td>
@@ -39,7 +46,7 @@
 
           <tr>
             <td>
-              <label for="phone">Phone:</label>
+              <label for="phone">Department:</label>
             </td>
             <td class="col-2"><input  name="department" [(ngModel)]="userUpdate.department"type="text" class="inputBox" id="department"/><br /></td>
           </tr>

@@ -13,6 +13,16 @@ export class DetailsCardComponent implements OnInit {
   userInfo:any 
   id:any
 
+  // Profile picture
+  public photoUrl = '';
+  public showInitials = true;
+  public bgColor:string = '';
+  public selectedID: any
+  public divColor:string = '';
+  public initials: string = '';
+  public circleColor: string[] = ['#367E18','#790252','#645CAA','#AF0171','#645CAA','#A460ED',
+                                  '#42855B','#FF4A4A','#A62349','#FFB200','#781C68','#D61C4E','#FF87B2'];
+
   // employeeDetail = {
   //   fullname: '',
   //   jobtitle: '',
@@ -43,6 +53,8 @@ export class DetailsCardComponent implements OnInit {
        localStorage.clear();
        
        this.userInfo = this.userUpdate[0]
+
+       
       //  console.log(this.userInfo)
       }
     })

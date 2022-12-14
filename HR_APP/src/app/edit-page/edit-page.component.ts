@@ -17,6 +17,7 @@ export class EditPageComponent implements OnInit {
     email: new FormControl(''),
     phonenumber: new FormControl(''),
     department: new FormControl(''),
+    profilepic: new FormControl('')
   })
 
   message = '';
@@ -64,6 +65,7 @@ export class EditPageComponent implements OnInit {
       email:  this.userUpdate.email ,
       phonenumber:  this.userUpdate.phonenumber ,
       department:  this.userUpdate.department ,
+      profilepic: this.userUpdate.profilepic
     }
     console.log(user);
     
