@@ -34,8 +34,13 @@ export class LandingComponent implements OnInit {
     this.retrieveEmployees();
   }
 
-  viewCard(){
-    this.router.navigate(['/view'])
+  viewCard(employeID: any){
+    console.log(employeID, "Hello");
+    
+    alert("Hi")
+    this.router.navigateByUrl(`/view/${employeID}`);
+    // this.router.navigate([`/view/${employeID}`])
+    alert("Done")
   }
   
   retrieveEmployees(): void {
@@ -43,18 +48,22 @@ export class LandingComponent implements OnInit {
         next: (data) => {
           this.employees = data;
            console.log(data);
+           console.log(this.employees[0]._id);
+           console.log(this.employees);
+           
+           
         },
         error: (e) => console.error(e)
       });
   }
 
   deleteEmployee(emplyId: Employee): void {
+
     this.crudService.delete(emplyId)
       .subscribe({
         next: (res) => {
           console.log(res);
           window.location.reload();
-          // this.router.navigate(['/home']);
         },
         error: (e) => console.error(e)
       });

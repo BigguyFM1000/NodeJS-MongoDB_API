@@ -30,7 +30,7 @@ export class CrudService {
   }
 
   delete(id: Employee): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id.id}`);
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 
   // deleteAll(): Observable<any> {
