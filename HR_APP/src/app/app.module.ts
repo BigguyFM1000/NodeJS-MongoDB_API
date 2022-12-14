@@ -11,6 +11,8 @@ import { DetailsCardComponent } from 'src/app/details-card/details-card.componen
 import { LandingComponent } from 'src/app/landing/landing.component';
 import { TestingComponent } from './testing/testing.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     AddEmployeeComponent,
     DetailsCardComponent,
     LandingComponent,
-    TestingComponent
+    TestingComponent,
+    SearchPipe
   ],
   imports: [
     RouterModule.forRoot([]),
@@ -31,7 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule,
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

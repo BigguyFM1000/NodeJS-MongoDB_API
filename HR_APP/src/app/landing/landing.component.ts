@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Employee } from '../../employee/employees';
 import { UpdateModule } from '../../employee/update.model';
 
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -27,6 +28,8 @@ export class LandingComponent implements OnInit {
   currentTutorial: Employees = {};
   currentIndex = -1;
   id = '';
+  searchText: any;
+  searchResult: any;
 
   constructor(private crudService: CrudService, private router: Router) { }
 
@@ -80,5 +83,12 @@ export class LandingComponent implements OnInit {
   this.router.navigate(['/edit'])
 
   }
+
+  search(value: string): void {
+    this.searchResult = this.employees.filter((val:any) =>
+      val.name.toLowerCase().includes(value)
+    );
+  }
+
 
 }

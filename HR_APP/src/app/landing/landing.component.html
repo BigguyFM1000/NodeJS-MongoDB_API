@@ -2,6 +2,12 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
 
 <div class="overflow-x-auto w-full">
+  <div>
+    <form class="d-flex flex-row search-hero" role="search">
+      <input class="form-control" type="text" name="search" placeholder="&#61442;  Start searching for a hero by id or name or country" autocomplete="off"
+        [(ngModel)]="searchText" size="50">
+    </form>
+  </div>
     <table class="table w-full">
       <!-- head -->
       <thead>
@@ -14,7 +20,7 @@
         </tr>
       </thead>
 
-      <tbody *ngFor="let employee of employees, let i = index">
+      <tbody *ngFor="let employee of employees | Search:searchText; let i = index">
         <!-- row 1 -->
         <tr>
           <th>
