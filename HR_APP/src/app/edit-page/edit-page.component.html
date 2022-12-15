@@ -1,63 +1,52 @@
-<div class="container overflow-x- scroll">
-    <div class="top-bar">
-      <h1>Update Employee</h1>
-      <button routerLink='/dash'><i class="bi bi-arrow-left-circle-fill icon"></i> Back</button>
-    </div>
-    <div class="bottom">
-      <!-- <form [formGroup]="editForm"> -->
-        <table>
+<div class="card mx-auto flex-shrink-0 justify-center w-full max-w-sm shadow-2xl bg-base-100">
+  <h1 class="text-center p-6 font-bold text-2xl">Update Employee</h1>
 
-          <tr>
-            <td>
-              <label for="firstname">Full Name:</label>
-            </td>
-            <td class="col-2"><input type="text" name="fullname" class="inputBox"  [(ngModel)]="userUpdate.fullname" id="fullname"/><br /></td>
-          </tr>
-
-          <tr>
-            <td>
-              <label for="firstname">Profile Picture URL:</label>
-            </td>
-            <td class="col-2"><input type="text" name="profilepic" class="inputBox"  [(ngModel)]="userUpdate.profilepic" id="profilepic"/><br /></td>
-          </tr>
-
-          <tr>
-            <td>
-              <label for="lastname">Job Title:</label>
-            </td>
-            <td class="col-2"><input type="text" name="jobtitle" [(ngModel)]="userUpdate.jobtitle" class="inputBox" id="jobtitle"/><br /></td>
-          </tr>
-
-          <tr>
-            <td>
-              <label for="email">Email:</label>
-            </td>
-            <td class="col-2"><input type="email" name="email" [(ngModel)]="userUpdate.email" class="inputBox" id="email"/><br /></td>
-            <!-- <td>{{userUpdate.email}}</td> -->
-          </tr>
-
-          <tr>
-            <td>
-              <label for="address">Phone Number:</label>
-            </td>
-            <td class="col-2">
-              <td class="col-2"><input type="text" name="phonenumber" [(ngModel)]="userUpdate.phonenumber" class="inputBox" id="phonenumber"/><br /></td>
-          </tr>
-
-          <tr>
-            <td>
-              <label for="phone">Department:</label>
-            </td>
-            <td class="col-2"><input  name="department" [(ngModel)]="userUpdate.department"type="text" class="inputBox" id="department"/><br /></td>
-          </tr>
-
-          <tr>
-            <td class="col-2 ml-auto">
-              <button type="submit" class="btn" (click)="updateEmployee()">Submit</button>
-            </td>
-          </tr>
-
-        </table>
-      <!-- </form> -->
+  <div class="avatar">
+    <div class="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
+      <img src={{userUpdate.profilepic}} />
     </div>
   </div>
+
+  <div class="card-body">
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text text-center badge badge-outline">Full Name</span>
+      </label>
+      <input type="text" name="fullname" placeholder="email" class="input input-bordered" [(ngModel)]="userUpdate.fullname" id="fullname"/>
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text text-center badge badge-outline">Job Title</span>
+      </label>
+      <input type="text" name="jobtitle" placeholder="email" class="input input-bordered" [(ngModel)]="userUpdate.jobtitle" id="jobtitle"/>
+    </div>
+
+    <div class="form-control">
+      <label class="label text-center">
+        <span class="label-text badge badge-outline">Email</span>
+      </label>
+      <input type="text" name="email" [(ngModel)]="userUpdate.email" placeholder="email" class="input input-bordered" id="email"/>
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text badge badge-outline">Phone Number</span>
+      </label>
+      <input type="text" name="phonenumber" [(ngModel)]="userUpdate.phonenumber" placeholder="password" class="input input-bordered" id="phonenumber"/>
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text badge badge-outline">Department</span>
+      </label>
+      <input type="text" name="phonenumber" [(ngModel)]="userUpdate.phonenumber" placeholder="password" class="input input-bordered" id="phonenumber"/>
+    </div>
+
+    <div class="form-control flex justify-between flex-row mt-6">
+      <button class="btn btn-active btn-accent w-20" routerLink='/dash' (click)="clear()">Back</button>
+      <button class="btn btn-primary w-fit p-4" routerLink='/dash' (click)="updateEmployee()">Update Details</button>
+    </div>
+  </div>
+</div>
+

@@ -75,4 +75,8 @@ export class EditPageComponent implements OnInit {
      }
     })
   }
+
+  clear(){
+    localStorage.clear()
+  }
 }
