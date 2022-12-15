@@ -10,6 +10,16 @@ import { CrudService } from '../../Services/crud.service';
   styleUrls: ['./edit-page.component.scss']
 })
 export class EditPageComponent implements OnInit {
+  // Profile picture
+  collection: any[] = [];
+  public photoUrl = '';
+  public showInitials = true;
+  public bgColor:string = '';
+  public selectedID: any
+  public divColor:string = '';
+  public initials: string = '';
+  public circleColor: string[] = ['#367E18','#790252','#645CAA','#AF0171','#645CAA','#A460ED',
+                                  '#42855B','#FF4A4A','#A62349','#FFB200','#781C68','#D61C4E','#FF87B2'];
 
   editForm = new FormGroup({
     fullname: new FormControl(''),
@@ -41,6 +51,26 @@ export class EditPageComponent implements OnInit {
        console.log(this.userUpdate);
        
        this.userInfo = this.userUpdate[0]
+
+       console.log(this.userInfo);
+           this.collection = this.userInfo;
+          for(let j = 0; j < this.userInfo.length; j++){
+            this.divColor = this.color(this.userInfo[j].fullname);
+            
+          }
+
+          console.log(this.userInfo);
+          console.log(this.userInfo);
+          
+          
+           
+
+           if(this.userInfo.image){
+             this.showInitials = false
+            //  this.photoUrl = this.employees[index].image
+           }else{
+            this.showInitials = true
+          }
       //  console.log(this.userInfo);
        
       }
@@ -79,4 +109,45 @@ export class EditPageComponent implements OnInit {
   clear(){
     localStorage.clear()
   }
+
+  color(fname:string ){
+    console.log(fname)
+    fname = fname[0].toUpperCase();
+    
+
+
+      if(fname.match(/[A-C]/i)){
+        this.circleColor[0]
+        this.bgColor = this.circleColor[0]
+      }else if(fname.match(/[D-F]/i)){
+       
+        this.bgColor = this.circleColor[1]
+      }else if(fname.match(/[G-I]/i)){
+        this.circleColor[2]
+        this.bgColor = this.circleColor[2]
+      }else if(fname.match(/[J-L]/i)){
+        this.circleColor[3]
+        this.bgColor = this.circleColor[3]
+      }else if(fname.match(/[M-O]/i)){
+        this.circleColor[4]
+        this.bgColor = this.circleColor[4]
+      }else if(fname.match(/[P-R]/i)){
+        this.circleColor[5]
+        this.bgColor = this.circleColor[5]
+      }else if(fname.match(/[S-U]/i)){
+        this.circleColor[6]
+        this.bgColor = this.circleColor[6]
+      }else if(fname.match(/[V-X]/i)){
+        this.circleColor[7]
+        this.bgColor = this.circleColor[7]
+      }else if(fname.match(/[YZ]/i)){
+        this.circleColor[8]
+        this.bgColor = this.circleColor[8]
+      }else{
+        this.circleColor[-1]
+        this.bgColor = this.circleColor[-1]
+      }
+      return this.bgColor
+  }
+
 }
