@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="card flex flex-col flex-wrap w-2/5 bg-purple-100 m-2"  *ngFor="let employee of employees | Search:searchText | paginate: { itemsPerPage: 4, currentPage: p }; let i = index">
+  <div class="card mx-auto flex flex-col flex-shrink-0 justify-center w-full max-w-sm shadow-2xl bg-base-100 p-4 bg-purple-100 m-4"  *ngFor="let employee of employees | Search:searchText | paginate: { itemsPerPage: 4, currentPage: p }; let i = index">
     <div class="card-body md:w-auto">
       
       <div class="align-baseline flex justify-between">
@@ -27,7 +27,7 @@
           </div>
           <ng-template #elseBlock>
             <div class=" text-center w-12 h-12 flex justify-center align-center badge badge-outline" [ngStyle]="{'background-color': circleColor[i]}"> <span class="relative"> {{
-              employee.fullname[0].toUpperCase() }}{{ employee.fullname.split(" ")[1][0]}} </span></div>
+              employee.fullname[0].toUpperCase() }}{{ employee.fullname.split(" ")[1][0].toUpperCase() }} </span></div>
           </ng-template>
         </div>
         <span class="text-xl text-white-500">{{ employee.fullname }}</span>
