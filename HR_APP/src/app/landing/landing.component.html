@@ -1,67 +1,69 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@2.43.2/dist/full.css" rel="stylesheet" type="text/css" />
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
 
-<div class="overflow-x-auto w-full">
-  <div>
-    <form class="d-flex flex-row search-hero" role="search">
-      <input class="form-control" type="text" name="search" placeholder="&#61442;  Start searching for a hero by id or name or country" autocomplete="off"
-        [(ngModel)]="searchText" size="50">
-    </form>
-  </div>
-    <table class="table w-full">
-      <!-- head -->
-      <thead>
-        <tr class="text-center text-white">
-          <th></th>
-          <th class="text-left">Name</th>
-          <th>Contact Details</th>
-          <th>Department</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+<div class="w-full">
+  <div class="flex flex-shrink-0 md:w-auto justify-between p-4">
 
-      <tbody *ngFor="let employee of employees | Search:searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
-        <!-- row 1 -->
-        <tr>
-          <th>
-            <label>
-              <p>#</p>
-            </label>
-          </th>
-          <td class="text-start">
-            <div class="flex items-center space-x-3">
-              <div class="avatar">
-                <div class="mask mask-squircle w-12 h-12">
-                  <img src={{employee.profilePic}} *ngIf="employee.profilePic; else elseBlock" alt="Avatar Tailwind CSS Component" />
-                </div>
-                <ng-template #elseBlock>
-                  <div class=" text-center rounded-full w-12 h-12 flex justify-center align-center" [ngStyle]="{'background-color': circleColor[i]}">{{
-                    employee.fullname[0].toUpperCase() }} {{ employee.fullname.split(" ")[1][0]}}</div>
-                </ng-template>
+    <form class=" flex flex-shrink-0 md:w-auto flex-row search-hero" role="search">
+      <!-- <input class="w-auto input input-bordered input-xs" type="text" name="search" placeholder="Search employees by name" autocomplete="off"
+        [(ngModel)]="searchText" size="50" class="rounded-lg p-4"> -->
+        <input type="text" name="search" placeholder="Search" [(ngModel)]="searchText" autocomplete="off" class="input input-bordered w-full max-w-xs" />
+    </form>
+    <div class="dropdown dropdown-end">
+      <Label >
+        <button class="btn btn-outline bg-purple-900" [routerLink]="['/add']">Add New</button>
+      </Label>
+
+    </div>
+  </div>
+
+  <div class="card flex-shrink-0 flex flex-col flex-wrap w-full max-w-sm shadow-2xl bg-purple-100 m-2"  *ngFor="let employee of employees | Search:searchText | paginate: { itemsPerPage: 4, currentPage: p }; let i = index">
+    <div class="card-body md:w-auto">
       
-              </div>
-              <div>
-                <div class="font-bold">{{ employee.fullname }}</div>
-                <div class="text-sm opacity-50">{{ employee.jobtitle }}</div>
-                <div>{{ employee._id }}</div>
-              </div>
-            </div>
-          </td>
-          <td class="text-center">
-            {{ employee.email }}
-            <br/>
-            <span class="badge badge-ghost badge-sm">0{{ employee.phonenumber }}</span>
-          </td>
-          <td class="text-center">{{ employee.department }}</td>
-          <td class="mx-auto flex gap-4 justify-center">
-            <button class="btn btn-outline btn-info" (click)="viewCard(employee._id)">View</button>
-            <button class="btn btn-outline btn-success" (click)=edit(employee) >Edit</button>
-            <button class="btn btn-outline btn-secondary" (click)="deleteEmployee(employee._id)">Delete</button>
-          </td>
-        </tr>
-      
-    </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <div class="align-baseline flex justify-between">
+        <div class="avatar">
+          <div class="mask mask-squircle w-12 h-12">
+            <img src={{employee.profilePic}} *ngIf="employee.profilePic; else elseBlock" alt="Avatar Tailwind CSS Component" />
+          </div>
+          <ng-template #elseBlock>
+            <div class=" text-center rounded-full w-12 h-12 flex justify-center align-center" [ngStyle]="{'background-color': circleColor[i]}">{{
+              employee.fullname[0].toUpperCase() }} {{ employee.fullname.split(" ")[1][0]}}</div>
+          </ng-template>
+        </div>
+        <span class="text-xl text-white-500">{{ employee.fullname }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="label-text text-xl text-black">Job Title:</span>
+        <span class="text-xl text-white-500">{{ employee.jobtitle }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="label-text text-xl text-black">Email:</span>
+        <span class="text-xl text-white-500">{{ employee.email }}</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="label-text text-xl text-black">Phone Number: </span>
+       <span class="text-xl text-white-500">{{ employee.phonenumber }}</span>
+      </div>
+
+      <div class="flex justify-between">
+          <span class="label-text text-xl text-black">Department:</span>
+          <span class="text-xl text-white-500">{{ employee.department }}</span>
+      </div>
+
+        <div class="mt-6 flex justify-around">
+          <span class="badge badge-outline p-4 btn-primary" (click)="viewCard(employee._id)"><i class="bi bi-eye-fill"></i></span>
+          <span class="badge badge-outline p-4 btn-accent" (click)=edit(employee) ><i class="bi bi-pencil-square"></i></span>
+          <span class="badge badge-outline p-4 btn-secondary" (click)="deleteEmployee(employee._id)"><i class="bi bi-trash3-fill"></i></span>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="flex juustify-center">
+    <pagination-controls (pageChange)="p = $event" class="mx-auto bg-red-200 rounded align-center pt-4 badge-outline "></pagination-controls>
   </div>
 
 
