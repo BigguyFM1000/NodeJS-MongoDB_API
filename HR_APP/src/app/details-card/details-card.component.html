@@ -3,16 +3,20 @@
       <h1 class="text-center p-6 font-bold text-4xl">View Employee</h1>
 
       <div class="avatar">
-        <div class="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
-          <img src={{userUpdate.profilepic}} />
+        <div class="mask mask-squircle w-12 h-12 mx-auto">
+          <img src={{userUpdate.profilepic}} *ngIf="userUpdate.profilepic; else elseBlock" alt="Avatar Tailwind CSS Component" />
         </div>
+        <ng-template #elseBlock>
+          <div class=" text-center w-12 h-12 flex justify-center align-center badge badge-outline" [ngStyle]="{'background-color': divColor}"> <span class="relative"> {{
+            userUpdate.fullname[0].toUpperCase() }} </span></div>
+        </ng-template>
       </div>
 
       <div class="card-body">
 
         <h2 class="card-title mx-auto">
           <span>{{ userUpdate.fullname }}</span> 
-          <div class="badge badge-secondary">NEW</div>
+         
         </h2>
         <div class="text-center">
           <label class="badge badge-outline">Job Title:</label><h3>{{ userUpdate.jobtitle }}</h3>

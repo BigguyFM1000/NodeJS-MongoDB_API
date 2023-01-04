@@ -27,7 +27,7 @@
           </div>
           <ng-template #elseBlock>
             <div class=" text-center w-12 h-12 flex justify-center align-center badge badge-outline" [ngStyle]="{'background-color': circleColor[i]}"> <span class="relative"> {{
-              employee.fullname[0].toUpperCase() }}{{ employee.fullname.split(" ")[1][0].toUpperCase() }} </span></div>
+              employee.fullname[0].toUpperCase() }} </span></div>
           </ng-template>
         </div>
         <span class="text-xl text-white-500">{{ employee.fullname }}</span>
@@ -45,7 +45,7 @@
 
       <div class="flex justify-between">
         <span class="label-text text-xl text-black">Phone Number: </span>
-       <span class="text-xl text-white-500">{{ employee.phonenumber }}</span>
+       <span class="text-xl text-white-500">0{{ employee.phonenumber }}</span>
       </div>
 
       <div class="flex justify-between">
