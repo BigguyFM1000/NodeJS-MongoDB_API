@@ -3,7 +3,7 @@
 
   <div class="avatar">
     <div class="mask mask-squircle w-12 h-12 mx-auto">
-      <img src={{userUpdate.profilepic}} *ngIf="userUpdate.profilePic; else elseBlock" alt="Avatar Tailwind CSS Component" />
+      <img src={{userUpdate.profilepic}} *ngIf="userUpdate.profilepic; else elseBlock" alt="Avatar Tailwind CSS Component" />
     </div>
     <ng-template #elseBlock>
       <div class=" text-center w-12 h-12 flex justify-center align-center badge badge-outline" [ngStyle]="{'background-color': divColor}"> <span class="relative"> {{

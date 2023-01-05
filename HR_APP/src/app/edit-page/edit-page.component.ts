@@ -67,7 +67,7 @@ export class EditPageComponent implements OnInit {
           
            
 
-           if(this.userInfo.image){
+           if(this.userUpdate.profilepic){
              this.showInitials = false
             //  this.photoUrl = this.employees[index].image
            }else{
