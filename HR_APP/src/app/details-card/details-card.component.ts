@@ -12,6 +12,7 @@ export class DetailsCardComponent implements OnInit {
   userUpdate: any;
   userInfo:any 
   id:any
+  test:any
 
   // Profile picture
   public photoUrl = '';
@@ -41,6 +42,10 @@ export class DetailsCardComponent implements OnInit {
     this.id = this.actived.snapshot.params['_id'];
     console.log(this.id)
     this.getById(this.id)
+
+    this.test = this.color("fhatuwani");
+    console.log(this.test);
+    
   }
 
   getById(userId:number){
@@ -54,16 +59,17 @@ export class DetailsCardComponent implements OnInit {
        
       
 
-       this.userInfo = this.userUpdate[0]
+       
 
-       console.log(this.userInfo);
+       console.log(this.userUpdate);
            
           // for(let j = 0; j < this.userInfo.length; j++){
           //   this.divColor = this.color(this.userInfo.fullname);
             
           // }
-
-          this.divColor = this.color(this.userInfo.fullname);
+        console.log(this.userUpdate.fullname);
+        
+          this.divColor = this.color(this.userUpdate.fullname);
 
           console.log(this.divColor);
           console.log(this.userInfo);

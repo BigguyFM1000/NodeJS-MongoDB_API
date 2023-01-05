@@ -4,6 +4,7 @@ import { CrudService } from '../../Services/crud.service';
 import { Router } from '@angular/router';
 import { Employee } from '../../employee/employees';
 import { UpdateModule } from '../../employee/update.model';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -53,15 +54,16 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveEmployees();
+    const Swal = require('sweetalert2')
   }
 
   viewCard(employeID: any){
     console.log(employeID, "Hello");
     
-    alert("Hi")
+
     this.router.navigateByUrl(`/view/${employeID}`);
     // this.router.navigate([`/view/${employeID}`])
-    alert("Done")
+ 
   }
   
   retrieveEmployees(): void {
@@ -153,6 +155,27 @@ export class LandingComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+  }
+
+  delete(empID:any){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteEmployee(empID)
+        Swal.fire(
+          'Deleted!',
+          'The employee has been deleted.',
+          'success'
+        )
+      }
+    })
   }
 
   editEmployee(employeeDetail: UpdateModule){
