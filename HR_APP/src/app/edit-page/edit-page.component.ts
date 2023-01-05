@@ -50,14 +50,16 @@ export class EditPageComponent implements OnInit {
        this.userUpdate = data
        console.log(this.userUpdate);
        
-       this.userInfo = this.userUpdate[0]
+       
 
-       console.log(this.userInfo);
-           this.collection = this.userInfo;
-          for(let j = 0; j < this.userInfo.length; j++){
-            this.divColor = this.color(this.userInfo[j].fullname);
+    
+       
+         console.log(this.userUpdate.fullname);
+         
+          this.divColor = this.color(this.userUpdate.fullname);
+            console.log(this.divColor);
             
-          }
+        
 
           console.log(this.userInfo);
           console.log(this.userInfo);
